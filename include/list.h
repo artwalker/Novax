@@ -41,11 +41,35 @@ typedef struct xMINI_LIST_ITEM MiniListItem_t; /* 最小节点数据类型重定
 //     ListItem_t *pxIndex;         /* 链表节点索引指针 */
 //     MiniListItem_t xListEnd;     /* 链表最后一个节点 */
 // } List_t;
+
+
+struct xLIST;
+struct xLIST_ITEM
+{
+    /* data */
+};
+typedef struct xLIST_ITEM ListItem_t;
+
+struct xMINI_LIST_ITEM
+{
+    /* data */
+};
+typedef struct xMINI_LIST_ITEM MiniListItem_t;
+
+/* 
+ * Definition of the type of queue used by the scheduler.
+ */
 typedef struct xLIST
 {
-    // 数量
-    // index索引
-    // 最后一个节点
+    volatile UBaseType_t uxNumberOfItems;
+    /**< Used to walk through the list.  Points to the last item returned by 
+     * a call to listGET_OWNER_OF_NEXT_ENTRY ().
+     */
+    ListItem_t * pxIndex;
+    /**< List item that contains the maximum possible item value meaning it is
+     * always at the end of the list and is therefore used as a marker.
+     */
+    MiniListItem_t xListEnd;
 }List_t;
 
 /*
