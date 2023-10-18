@@ -32,17 +32,6 @@ struct xMINI_LIST_ITEM
 };
 typedef struct xMINI_LIST_ITEM MiniListItem_t; /* 最小节点数据类型重定义 */
 
-/*
- * Definition of the type of queue used by the scheduler.
- */
-// typedef struct xLIST
-// {
-//     UBaseType_t uxNumberOfItems; /* 链表节点计数器 */
-//     ListItem_t *pxIndex;         /* 链表节点索引指针 */
-//     MiniListItem_t xListEnd;     /* 链表最后一个节点 */
-// } List_t;
-
-
 struct xLIST;
 struct xLIST_ITEM
 {
