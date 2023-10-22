@@ -12,9 +12,14 @@
  */
 
 /* Type definitions. */
+#define portCHAT        char
+#define portFLOAT       float
+#define portDOUBLE      double
+#define portLONG        long
+#define portSHORT       int
+#define portSTACK_TYPE  uint8_t
+#define portBASE_TYPE   char
 
-#define portBASE_TYPE   int
-
-typedef unsigned portBASE_TYPE   UBaseType_t;
+typedef unsigned char   UBaseType_t;
 
 #endif /* PORTMACRO_H */
